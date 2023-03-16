@@ -23,7 +23,7 @@ const findFrequency = function(array) {
     }
   }
     return `most: '${elementHavingMostFrequency}', least: '${elementHavingLeastFrequency}'`;
-}
+};
 
 const isPalindrome = function(str) {
   return str.toLowerCase() == str.split('').reverse().join('').toLowerCase();
@@ -74,7 +74,6 @@ const scoreScrabble = function(str) {
     y: 4,
     z: 10,
   }; 
-
   return str 
     .split('')
     .reduce((sum, letter) => sum + letterPoint[letter.toLowerCase()], 0);
