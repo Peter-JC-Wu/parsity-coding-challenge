@@ -22,8 +22,8 @@ const findFrequency = function(array) {
         elementHavingLeastFrequency = array[i];
     }
   }
-    return `most: '${elementHavingMostFrequency}', least: '${elementHavingLeastFrequency}'`;
-};
+    return {most: elementHavingMostFrequency, least: elementHavingLeastFrequency};
+}
 
 const isPalindrome = function(str) {
   return str.toLowerCase() == str.split('').reverse().join('').toLowerCase();
@@ -41,11 +41,10 @@ const removeParenth = function(str) {
   function newString(offset) {
     return (offset > 0 ? "" : "");
   }
-  return str.replace(/\(|\)/g, newString);
+  return str.replace(/\(|not|\)/g, newString);
 };
 
 const scoreScrabble = function(str) {
-  // your code here - don't forget to return a number!
   const letterPoint = {
     a: 1,
     b: 3,
@@ -74,7 +73,9 @@ const scoreScrabble = function(str) {
     y: 4,
     z: 10,
   }; 
+
   return str 
     .split('')
     .reduce((sum, letter) => sum + letterPoint[letter.toLowerCase()], 0);
 };
+
