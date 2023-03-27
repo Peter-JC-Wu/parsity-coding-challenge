@@ -78,3 +78,4 @@ const scoreScrabble = function(str) {
     .split('')
     .reduce((sum, letter) => sum + letterPoint[letter.toLowerCase()], 0);
 };
+
