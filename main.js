@@ -41,7 +41,7 @@ const removeParenth = function(str) {
   function newString(offset) {
     return (offset > 0 ? "" : "");
   }
-  return str.replace(/\(|not|\)/g, newString);
+  return str.replace(/ *\([^)]*\) */g, newString);
 };
 
 const scoreScrabble = function(str) {
@@ -78,4 +78,3 @@ const scoreScrabble = function(str) {
     .split('')
     .reduce((sum, letter) => sum + letterPoint[letter.toLowerCase()], 0);
 };
-
